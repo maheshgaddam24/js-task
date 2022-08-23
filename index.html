@@ -41,49 +41,114 @@
                 business and technology solutions to help our clients improve their business
                 performance.</p><br>
             <h1>Our Culture</h1>
-            <p>At People Tech, success is driven by the idea that our customers, 
-            employees and community are our family. We believe in supporting ideas 
-            and activities that drive passion with our employees and incorporate 
-            those interests into organized activities. This has created a positive 
-            workplace culture resulting in an increase in productivity and 
-            creativity in the solutions we provide to our customers.</p>
+            <p>At People Tech, success is driven by the idea that our customers,
+                employees and community are our family. We believe in supporting ideas
+                and activities that drive passion with our employees and incorporate
+                those interests into organized activities. This has created a positive
+                workplace culture resulting in an increase in productivity and
+                creativity in the solutions we provide to our customers.</p>
         </div>
     </div>
     <div class="side2">
-        <h1>Employee Registration Form</h1><br>
-        <form name='registration' onSubmit="return formValidation();">
-            <ul>
-                <li><label for="empid">Employee ID:</label></li>
-                <li><input type="text" name="empid" size="20" /></li><br>
-                <li><label for="firstname">First Name:</label></li>
-                <li><input type="text" name="firstname" size="20" /></li>
-                <li><label for="lastname">Last Name:</label></li>
-                <li><input type="text" name="lastname" size="20" /></li>
-                <li><label for="email">Email:</label></li>
-                <li><input type="text" name="email" size="20" /></li>
-                <li><label for="role">Role:</label></li>
-                <li><input type="text" name="role" size="20" /></li>
-                <li><label for="status">Marital Status:</label></li>
-                <li><select name="status">
-                        <option selected="" value="Default">Please select</option>
-                        <option value="AF">Single</option>
-                        <option value="AL">Married</option>
-                        <option value="DZ">Divorced</option>
-                        <option value="AS">Widowed</option>
-                        <option value="AD">Prefer not to say</option>
-                    </select></li><tr>
-                <li><label id="gender">Sex:</label></li>
-                <li><input type="radio" name="male" value="Male" /><span>Male</span></li>
-                <li><input type="radio" name="female" value="Female" /><span>Female</span></li>
-                <li><label>Employement Type:</label></li>
-                <li><input type="checkbox" name="ft" value="en"  /><span>Full Time</span></li>
-                <li><input type="checkbox" name="intern" value="noen" /><span>Intern</span></li>
-                <li><label for="desc">About:</label></li>
-                <li><textarea name="desc" id="desc"></textarea></li>
-                <li><input type="submit" name="submit" value="Submit" /></li>
-            </ul>
+        <form name="registration">
+            <h1>Employee Registration Form</h1><br>
+            <table>
+                <tr>
+                    <td><label>Emp ID: </label></td>
+                    <td>
+                        <input type="text" id="eid" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>First Name: </label></td>
+                    <td>
+                        <input type="text" id="fname" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Last Name: </label></td>
+                    <td>
+                        <input type="text" id="lname" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Email: </label></td>
+                    <td>
+                        <input type="text" id="email" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Role: </label></td>
+                    <td>
+                        <input type="text" id="role" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Gender: </label></td>    
+                    <td>    
+                        <input type="radio" name="gender" value="Male">Male    
+                        <input type="radio" name="gender" value="Female">Female    
+                    </td>  
+                </tr>
+                <tr>
+                    <td><label>Marital Status: </label></td>
+                    <td>
+                        <select id="status">
+                            <option selected="" value="Default">Please select</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Employe Type: </label></td>    
+                    <td>    
+                        <input type="checkbox" name="empstatus" value="Full Time">Full Time    
+                        <input type="checkbox" name="empstatus" value="Intern">Intern    
+                    </td>  
+                </tr>
+
+                <tr>
+                    <td>
+                        <input class="button" type="button" name="submit" value="Submit" onclick="return validate(detail)">
+                        <input class="reset" type="reset" name="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+
+            
+            <script>
+                var id = document.querySelector("#eid");
+                var fname = document.querySelector("#fname");
+                var lname = document.querySelector("#lname");
+                var email = document.querySelector("#email");
+                var role = document.querySelector("#role");
+                var gender = document.registration.gender;
+                var status = document.querySelector("#status");
+                var empstatus = document.registration.empstatus;
+
+                function detail() {
+                    var data = {
+                        "EMP ID" : id.value,
+                        "First Name" : fname.value,
+                        "Last Name" : lname.value,
+                        "Email" : email.value,
+                        "Role" : role.value,
+                        "Gender" : gender.value,
+                        "Employement Type" : empstatus.value
+
+                    }
+                    
+                    console.log(data);
+
+                }
+            </script>
         </form>
     </div>
+
 </body>
 
 </html>
