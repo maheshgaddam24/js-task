@@ -1,0 +1,22 @@
+body{
+    background: linear-gradient(to left, brown, white, rgb(100, 100, 100));    left: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: min(130%);
+    text-align: center;
+}
+
+
+#textb {
+    padding-left: 1%;
+    font-size: min(120%);
+    margin-top: 5%;
+    margin-left: 2%;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+#dis{
+    margin-top: 20%;
+    margin-left: 2%;
+    font-size: min(150%);
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}

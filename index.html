@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <h1>Date and Time in selected country </h1>
+
+</head>
+
+<body>
+    <form name="form">
+        <select name="time" id="textb" onChange="display_TZ()"></select><br><br>
+        <span id="dis"></span><br>
+    </form>
+    <script>
+        function display_TZ() {
+
+            tz = form.time.options[form.time.options.selectedIndex].value;
+            str = new Date().toLocaleString("en-NZ", { timeZone: tz, timeZoneName: "short" });
+            document.getElementById('dis').innerHTML = str;
+            const local_offset = new Date().getTimezoneOffset()
+            return  local_offset
+            display_c()
+        }
+        function display_c() {
+            refresh = 1000
+            mytime = setTimeout('display_TZ()', refresh)
+        }
+
+        var my_timezones = [
+
+            "Africa/Johannesburg",
+            "Africa/Cairo",
+            "Africa/Nairobi",
+            "Africa/Tunis",
+
+            "America/Argentina/Cordoba",
+            "America/Mexico_City",
+            "America/New_York",
+            "America/Detroit",
+            "America/Chicago",
+            "America/Los_Angeles",
+            "America/Costa_Rica",
+            "America/Havana",
+            "America/Toronto",
+            "America/Jamaica",
+            "America/Guyana",
+
+            "Antarctica/Casey",
+            "Antarctica/Davis",
+            "Antarctica/Mawson",
+            "Antarctica/Palmer",
+            "Antarctica/Rothera",
+            "Antarctica/Syowa",
+           
+            "Asia/Dubai",
+            "Asia/Kabul", 
+            "Asia/Kolkata", 
+            "Asia/Dhaka",
+            "Asia/Thimphu",
+            "Asia/Shanghai",
+            "Asia/Hong_Kong",
+            "Asia/Jerusalem",
+            "Asia/Colombo",
+            "Asia/Kuala_Lumpur",
+            "Asia/Kathmandu",
+            
+            "Atlantic/Bermuda",
+            "Atlantic/South_Georgia",
+            "Atlantic/Madeira",
+            "Atlantic/Azores",
+
+            "Australia/Melbourne",
+            "Australia/Sydney",
+            "Australia/Brisbane",
+            "Australia/Lindeman",
+            "Australia/Adelaide",
+            "Australia/Perth",
+
+            "Europe/Vienna",
+            "Europe/Prague",
+            "Europe/Berlin",
+            "Europe/Madrid",
+            "Europe/Paris",
+            "Europe/London",
+            "Europe/Dublin",
+            "Europe/Rome",
+            "Europe/Monaco",
+            "Europe/Amsterdam",
+
+            "Pacific/Pago_Pago",
+            "Pacific/Galapagos",
+            "Pacific/Fiji",
+            "Pacific/Tarawa", 
+            "Pacific/Nauru",
+            "Pacific/Niue",
+            "Pacific/Auckland",
+    
+                 
+            
+        ]
+
+        for (i = 0; i < my_timezones.length; i++) {
+            addOption(document.form.time, my_timezones[i], my_timezones[i])
+        }
+
+        function addOption(selectbox, text, value) {
+            var optn = document.createElement("OPTION")
+
+            optn.text = text
+            optn.value = value
+            selectbox.options.add(optn)
+        }
+    </script>
+</body>
+
+</html>
