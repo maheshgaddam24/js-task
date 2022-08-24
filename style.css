@@ -1,12 +1,19 @@
 html{
     background-color:rgb(255, 255, 255);
-    background-image: url("download.png");
+    background-image: url("dd.jpg");
     
 }
 
 body {
-    width: fit-content;
+    display: flex;
 }
+
+.container {
+    width: 90%;
+    min-width: 500px;
+    margin: auto;
+}
+
 .header {
     position: fixed;
     height: 70px;
@@ -22,15 +29,16 @@ body {
 }
 
 .side1 {
+    color: black;
     position:absolute;
-    left:70px; 
-    top:150px;
+    left:50px; 
+    top:130px;
     width:800px;
-    background-color: aliceblue;
+    font-weight: bolder;
     padding-left: 2%;
     padding-top: 2%;
-    padding-right: 4%;
-    padding-bottom: 3%;
+    padding-right: 2%;
+    padding-bottom: 2%;
     border-radius: 2%;
 }
 
@@ -39,9 +47,8 @@ body {
 }
 
 .side2 {
-    background-color: aliceblue;
     position:fixed ; 
-    left:1200px; 
+    left:1100px; 
     top:150px;  
     width:700px;
 
@@ -49,18 +56,9 @@ body {
 
 .button{
     position: fixed;
+    top: 770px;
     left: 1350px;
-    background-color: rgb(24, 163, 117);
-    padding: 10px 30px;
-    border: 0px;
-    border-radius: 8%;
-    font-weight: 700;
-}
-
-.reset{
-    position: fixed;
-    left: 1470px;
-    background-color: rgb(24, 163, 117);
+    color: maroon;
     padding: 10px 30px;
     border: 0px;
     border-radius: 8%;
@@ -79,14 +77,14 @@ input[type="submit"] {
 }  
 
 form{  
-    background-color: aliceblue;
+    color: black;
     position:fixed ; 
-    left:1100px;
+    left:1050px;
     text-align: left;  
     font-family: Calibri;  
     font-size: 20px;  
-    border: 0px solid black;  
-    width: 750px;  
+    border: 1px solid black;  
+    width: 700px;  
     height: 705px;
     padding-bottom: 20px;
     padding-left: 2%;

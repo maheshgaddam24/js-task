@@ -5,8 +5,8 @@ function validate(callback) {
     var email = document.registration.email;
     var role = document.registration.role;
     var gender = document.registration.gender;
-    var status = document.registration.status; 
-   
+    var status = document.registration.status;
+
     if (id.value.length <= 0) {
         alert("Employee ID is required");
         id.focus();
@@ -37,15 +37,18 @@ function validate(callback) {
         gender.focus();
         return false;
     }
-    
+
     if (status.value == "Default") {
         alert("Marital status is required");
         status.focus();
         return false;
     }
-    
+
 
     callback();
+
+    document.registration.reset();
+
     return false;
 }
 
