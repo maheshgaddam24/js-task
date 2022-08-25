@@ -25,8 +25,8 @@ body {
 
 .container {
   background-color: #9b9b9b;
-  width: 70vw; 
-  height: 50vw;
+  width: 50vw; 
+  height: 30vw;
   margin: 0;
   padding: 20px;
   display: flex;
@@ -47,20 +47,6 @@ body {
   width: 100%;  
 }
 
-#d-img{
-  background-color: #fff;
-  margin: 10px;
-  width: 500px;
-  height: 500px;
-  border-radius: 15px;
-}
-
-#d-img img{
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  border-radius: 15px;
-}
 
 #btn {
   margin: 10px;
@@ -75,7 +61,7 @@ body {
 }
 
 #btn:hover{
-  background-color: #2e47b8;
+  background-color: #3a3a3a;
   transform: scale(1.2);
 }
 
@@ -86,10 +72,5 @@ body {
 @media only screen and (max-width: 590px) {
   .header {
     font-size: 20px;
-  }
-  #d-img{
-    background-color: #fff;    
-    width: 200px;
-    height: 200px;
   }
 }

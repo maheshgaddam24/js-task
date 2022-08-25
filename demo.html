@@ -12,35 +12,15 @@
         <h1>Random Image Generator!</h1>
     </div>
     <div class="container">
-        <div class='images'>
-            <div id='d-img'>
-                <p>Placeholder Image</p>
-            </div>
-        </div>
-
         <div class='buttons'>
-            <button id="btn" onclick="fetchImage()">Random Image!</button>
             <button id="btn" onclick="download()" >Click to download</button>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script>
-        const dImage = document.getElementById('d-img');
-        const dButton = document.getElementById('btn');
-
-        dButton.addEventListener('click', fetchImage);
-
-        function fetchImage() {
-            fetch('https://dog.ceo/api/breeds/image/random')
-                .then(response => response.json())
-                .then(data => {
-                    dImage.innerHTML = `<img src="${data.message}"/>`;
-                })
-        }
-
         function download() {
             axios({
-                url: 'https://dog.ceo/api/breeds/image/random',
+                url: 'https://source.unsplash.com/random',
                 method: "GET",
                 responseType: "blob"
             })
@@ -48,7 +28,7 @@
                     const temp = window.URL.createObjectURL(new Blob([response.data]));
                     const link = document.createElement('a');
                     link.href = temp;
-                    link.setAttribute('download', 'image.jpg');
+                    link.setAttribute('download', 'download.jpg');
                     document.body.appendChild(link);
                     link.click();
                 });
