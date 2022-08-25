@@ -8,12 +8,12 @@ async function getUser() {
 
     const user = data.results[0];
     let { title, first, last } = user.name;
-    let { gender, email, phone } = user;
+    let { gender, email } = user;
     let age = user.dob.age;
-    let { city, state, country } = user.location;
+    let { country } = user.location;
 
     let fullName = title + ". " + first + " " + last;
-    document.title = fullName;
+    
 
     document.querySelector("#head").textContent = fullName;
     document.querySelector("#email").href = email;
